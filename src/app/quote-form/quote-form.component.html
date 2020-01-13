@@ -5,10 +5,10 @@
             <div class="form-group">
       
                 <label for="name">Name</label>
-                <input type="text" required class="form-control" id="name" [(ngModel)]="newquote.name" name="name">
+                <input type="text" required class="form-control" id="name" [(ngModel)]="newquote.name" name="name" #name='ngModel' required>
       
       <!-- Testing to see if we get any data -->
-                Display {{newquote.name}}
+                Display {{newQuote.name}}
             </div>
             <div class="form-group">
       

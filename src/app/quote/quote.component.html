@@ -1,7 +1,7 @@
 <div class="col-md-8 mt-5">
   <div *ngFor='let quote of quotes;let i = index'>
     <p>{{quote.name}} was posted on {{quote.completeDate|date}}</p>
-    <app-like>   </app-like>
+    <app-like></app-like>
     <app-disklike></app-disklike><br><br>
     
     <button (click)='toggleDetails(i)' class="btn btn-outline-info btn-sm">more..</button>

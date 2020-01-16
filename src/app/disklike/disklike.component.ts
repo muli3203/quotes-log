@@ -10,7 +10,7 @@ export class DisklikeComponent implements OnInit {
   NumberOfDislikes: number = 0;
   
   DislikeButton() {
-    this.NumberOfDislikes--;
+    this.NumberOfDislikes ++;
   }
   constructor() { }
 

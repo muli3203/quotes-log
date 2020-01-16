@@ -19,10 +19,10 @@
   </div>
 
   <div class="form-group">
-    <label for="complete">Completion</label>
-    <input class="form-control" type='date' id="complete" [(ngModel)]="newQuote.completeDate" name="completeDate"
-      #completeDate="ngModel" required>
-    <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+    <label for="created">Create</label>
+    <input class="form-control" type='date' id="created" [(ngModel)]="newQuote.createdDate" name="createdDate"
+      #createdDate="ngModel" required>
+    <div [hidden]="createdDate.valid || createdDate.pristine" class="alert alert-danger">
       <p>Date is required</p>
     </div>
   </div>

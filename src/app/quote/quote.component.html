@@ -1,32 +1,37 @@
 <div class="col-md-8 mt-5">
-    <p *ngIf='quotes.length > 0'><button (click)='findHighestVotes()' class="btn btn-outline-dark btn-sm">Most Liked Quote</button>
-    </p>
-    <div appHighlightBestQuote>
-        <div>
-          <p>{{bestQuote}}.</p>
-          <p>{{highestCounter}}</p>
-        </div>
-      </div>
+  <p *ngIf='quotes.length > 0'><button (click)='findHighestVotes()' class="btn btn-warning btn-sm">Most Liked
+      Quote</button>
+  </p>
+  <div appHighlightBestQuote>
+    <div>
+      <p>{{bestQuote}}.</p>
+      <p>{{highestCounter}}</p>
+    </div>
+  </div>
   <div *ngFor='let quote of quotes;let i = index'>
     <p>{{quote.name}}. Posted on {{quote.createdDate|date}}.</p>
     <div class="row">
       <div class="col-md-6">
-          <span class="m-4">{{ quote.clickCounter }}</span><br>
+        <span class="m-4">{{ quote.clickCounter }}</span><br>
         <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)"><button type="button"
-            class="btn btn-outline-dark btn-sm" style="margin-top: 9%;"> Like<i
-              ng-click="count = count + 1" ng-init="count=0"
-              style="color:black;"></i></button>
+            class="btn btn-primary btn-sm" style="margin-top: 9%; width: 30%; "> Like<i ng-click="count = count + 1"
+              ng-init="count=0" style="color:black;"></i></button>
 
         </a>
       </div>
       <div class="col-md-6">
-        <app-disklike></app-disklike><br><br>
+        <span class="m-4">{{ quote.dislikeCounter }}</span><br>
+        <a href="#" onclick="event.preventDefault()" (click)="countDislike(quote)"><button type="button"
+            class="btn btn-success btn-sm" style="margin-top: 9%; width: 30%"> Dislike<i ng-click="count = count + 1"
+              ng-init="count=0" style="color:black;"></i></button>
+
+        </a>
       </div>
-    </div>
+    </div><br>
 
 
 
-    <button (click)='toggleDetails(i)' class="btn btn-outline-info btn-sm">more..</button>
+    <button (click)='toggleDetails(i)' class="btn btn-light btn-sm" style="width: 15%">more..</button>
     <app-quote-list *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
     </app-quote-list>
     <hr>
